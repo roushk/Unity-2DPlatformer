@@ -4,280 +4,280 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -5653878121705019575
-    second: PlayerSpritesheet_0
+    second: OverheadAttack_00
   - first:
       213: 1335251186984836748
-    second: PlayerSpritesheet_1
+    second: OverheadAttack_01
   - first:
       213: 3843040423100834259
-    second: PlayerSpritesheet_2
+    second: OverheadAttack_02
   - first:
       213: 385077577419708428
-    second: PlayerSpritesheet_3
+    second: OverheadAttack_03
   - first:
       213: 8570058877390158369
-    second: PlayerSpritesheet_4
+    second: OverheadAttack_04
   - first:
       213: 5776891531103278535
-    second: PlayerSpritesheet_5
+    second: OverheadAttack_05
   - first:
       213: -8744608848720091140
-    second: PlayerSpritesheet_6
+    second: OverheadAttack_06
   - first:
       213: -3512167338147644310
-    second: PlayerSpritesheet_7
+    second: OverheadAttack_07
   - first:
       213: -8422180100218658531
-    second: PlayerSpritesheet_8
+    second: OverheadAttack_08
   - first:
       213: -6666380717595194736
-    second: PlayerSpritesheet_9
+    second: OverheadAttack_09
   - first:
       213: -5902153548733592073
-    second: PlayerSpritesheet_10
+    second: OverheadAttack_10
   - first:
       213: 1121384912988773229
-    second: PlayerSpritesheet_11
+    second: OverheadAttack_11
   - first:
       213: -8664067101934967524
-    second: PlayerSpritesheet_12
+    second: OverheadAttack_12
   - first:
       213: 3243051633354422942
-    second: PlayerSpritesheet_13
+    second: OverheadAttack_13
   - first:
       213: -7146216598874806323
-    second: PlayerSpritesheet_14
+    second: SlashAttack_00
   - first:
       213: -2057321814293377697
-    second: PlayerSpritesheet_15
+    second: SlashAttack_01
   - first:
       213: -3963750647726013409
-    second: PlayerSpritesheet_16
+    second: SlashAttack_02
   - first:
       213: -8409309062894648033
-    second: PlayerSpritesheet_17
+    second: SlashAttack_03
   - first:
       213: -4906187935478585576
-    second: PlayerSpritesheet_18
+    second: SlashAttack_04
   - first:
       213: 3205924422486003731
-    second: PlayerSpritesheet_19
+    second: SlashAttack_05
   - first:
       213: -2611701986209840137
-    second: PlayerSpritesheet_20
+    second: SlashAttack_06
   - first:
       213: -8745163237237237793
-    second: PlayerSpritesheet_21
+    second: SlashAttack_07
   - first:
       213: 3318355296163348389
-    second: PlayerSpritesheet_22
+    second: SlashAttack_08
   - first:
       213: -8791009485902935204
-    second: PlayerSpritesheet_23
+    second: SlashAttack_09
   - first:
       213: 8301072307493673010
-    second: PlayerSpritesheet_24
+    second: SlashAttack_10
   - first:
       213: -2285503654384087349
-    second: PlayerSpritesheet_25
+    second: SlashAttack_11
   - first:
       213: 3934638637640611969
-    second: PlayerSpritesheet_26
+    second: SlashAttack_12
   - first:
       213: -4491324427560800831
-    second: PlayerSpritesheet_27
+    second: StabAttack_00
   - first:
       213: 7689016136279187485
-    second: PlayerSpritesheet_28
+    second: StabAttack_01
   - first:
       213: 8005394361713723440
-    second: PlayerSpritesheet_29
+    second: StabAttack_02
   - first:
       213: -4179881796978073572
-    second: PlayerSpritesheet_30
+    second: StabAttack_03
   - first:
       213: -6324395767979559592
-    second: PlayerSpritesheet_31
+    second: StabAttack_04
   - first:
       213: 914292467814232322
-    second: PlayerSpritesheet_32
+    second: StabAttack_05
   - first:
       213: -3223445060406688168
-    second: PlayerSpritesheet_33
+    second: StabAttack_06
   - first:
       213: -420406559223471808
-    second: PlayerSpritesheet_34
+    second: StabAttack_07
   - first:
       213: 9142865601509750540
-    second: PlayerSpritesheet_35
+    second: StabAttack_08
   - first:
       213: 7182587195709758343
-    second: PlayerSpritesheet_36
+    second: StabAttack_09
   - first:
       213: 8614082736059340729
-    second: PlayerSpritesheet_37
+    second: StabAttack_10
   - first:
       213: 514097919082102830
-    second: PlayerSpritesheet_38
+    second: StabAttack_11
   - first:
       213: -2956328056481671742
-    second: PlayerSpritesheet_39
+    second: StabAttack_12
   - first:
       213: -6096108848878927102
-    second: PlayerSpritesheet_40
+    second: StabAttack_13
   - first:
       213: 175728003682659864
-    second: PlayerSpritesheet_41
+    second: Die_00
   - first:
       213: -3848771896871038302
-    second: PlayerSpritesheet_42
+    second: Die_01
   - first:
       213: -522994614947349169
-    second: PlayerSpritesheet_43
+    second: Die_02
   - first:
       213: -1057433034533423886
-    second: PlayerSpritesheet_44
+    second: Die_03
   - first:
       213: -347478918735986876
-    second: PlayerSpritesheet_45
+    second: Die_04
   - first:
       213: 3537516078400972932
-    second: PlayerSpritesheet_46
+    second: Die_05
   - first:
       213: -1074410846438004491
-    second: PlayerSpritesheet_47
+    second: Die_06
   - first:
       213: 4167233704368375275
-    second: PlayerSpritesheet_48
+    second: Die_07
   - first:
       213: 282973723124421891
-    second: PlayerSpritesheet_49
+    second: Die_08
   - first:
       213: 2874531938639602237
-    second: PlayerSpritesheet_50
+    second: Die_09
   - first:
       213: 6456452157430509821
-    second: PlayerSpritesheet_51
+    second: FallLoop_00
   - first:
       213: -6528658515399109152
-    second: PlayerSpritesheet_52
+    second: FallLoop_01
   - first:
       213: 3894904723939808810
-    second: PlayerSpritesheet_53
+    second: TakeDamage_00
   - first:
       213: -6292353662270658072
-    second: PlayerSpritesheet_54
+    second: TakeDamage_01
   - first:
       213: -3812096356573876294
-    second: PlayerSpritesheet_55
+    second: TakeDamage_02
   - first:
       213: -7193772315336541667
-    second: PlayerSpritesheet_56
+    second: TakeDamage_03
   - first:
       213: -8963906001864517876
-    second: PlayerSpritesheet_57
+    second: TakeDamage_04
   - first:
       213: 2781289076131553876
-    second: PlayerSpritesheet_58
+    second: GuardLoop_00
   - first:
       213: 5313422308217032204
-    second: PlayerSpritesheet_59
+    second: GuardLoop_01
   - first:
       213: 3580041075336729065
-    second: PlayerSpritesheet_60
+    second: GuardLoop_02
   - first:
       213: 247159308358601911
-    second: PlayerSpritesheet_61
+    second: GuardLoop_03
   - first:
       213: 4128841686311030996
-    second: PlayerSpritesheet_62
+    second: GuardLoop_04
   - first:
       213: -8905289023598451580
-    second: PlayerSpritesheet_63
+    second: GuardLoop_05
   - first:
       213: -1116699502874439821
-    second: PlayerSpritesheet_64
+    second: GuardDown_00
   - first:
       213: -8187637953741782633
-    second: PlayerSpritesheet_65
+    second: GuardDown_01
   - first:
       213: -2996406538274557284
-    second: PlayerSpritesheet_66
+    second: GuardDown_02
   - first:
       213: -5179120221565566356
-    second: PlayerSpritesheet_67
+    second: GuardDown_03
   - first:
       213: -7360216020328485544
-    second: PlayerSpritesheet_68
+    second: GuardUp_00
   - first:
       213: 542671843168455132
-    second: PlayerSpritesheet_69
+    second: GuardUp_01
   - first:
       213: 648702665651404701
-    second: PlayerSpritesheet_70
+    second: GuardUp_02
   - first:
       213: -7356680312528069168
-    second: PlayerSpritesheet_71
+    second: GuardUp_03
   - first:
       213: -8244559161062147048
-    second: PlayerSpritesheet_72
+    second: IdleLoop_00
   - first:
       213: 8169691535673917003
-    second: PlayerSpritesheet_73
+    second: IdleLoop_01
   - first:
       213: 2762252672552859005
-    second: PlayerSpritesheet_74
+    second: IdleLoop_02
   - first:
       213: -3450938729512907500
-    second: PlayerSpritesheet_75
+    second: IdleLoop_03
   - first:
       213: -8481139728782583999
-    second: PlayerSpritesheet_76
+    second: IdleLoop_04
   - first:
       213: -4218619003007147370
-    second: PlayerSpritesheet_77
+    second: IdleLoop_05
   - first:
       213: 172627499894959637
-    second: PlayerSpritesheet_78
+    second: JumpBegin_00
   - first:
       213: 4470551951769942531
-    second: PlayerSpritesheet_79
+    second: JumpBegin_01
   - first:
       213: 4903071294252580406
-    second: PlayerSpritesheet_80
+    second: JumpBegin_02
   - first:
       213: -1171691997384942857
-    second: PlayerSpritesheet_81
+    second: JumpBegin_03
   - first:
       213: -9200192554285537340
-    second: PlayerSpritesheet_82
+    second: JumpBegin_04
   - first:
       213: -3701919293389157872
-    second: PlayerSpritesheet_83
+    second: JumpBegin_05
   - first:
       213: 8220578942273022632
-    second: PlayerSpritesheet_84
+    second: RunLoop_00
   - first:
       213: 9120036292205088806
-    second: PlayerSpritesheet_85
+    second: RunLoop_01
   - first:
       213: -7588202413764852347
-    second: PlayerSpritesheet_86
+    second: RunLoop_02
   - first:
       213: -4625339031262237838
-    second: PlayerSpritesheet_87
+    second: RunLoop_03
   - first:
       213: -286762995258740351
-    second: PlayerSpritesheet_88
+    second: RunLoop_04
   - first:
       213: 3336940832321953399
-    second: PlayerSpritesheet_89
+    second: RunLoop_05
   - first:
       213: 3415652813404588173
-    second: PlayerSpritesheet_90
+    second: RunLoop_06
   - first:
       213: -4853221045000840162
-    second: PlayerSpritesheet_91
+    second: RunLoop_07
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -379,7 +379,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerSpritesheet_0
+      name: OverheadAttack_00
       rect:
         serializedVersion: 2
         x: 0
@@ -400,7 +400,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_1
+      name: OverheadAttack_01
       rect:
         serializedVersion: 2
         x: 79
@@ -421,7 +421,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_2
+      name: OverheadAttack_02
       rect:
         serializedVersion: 2
         x: 158
@@ -442,7 +442,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_3
+      name: OverheadAttack_03
       rect:
         serializedVersion: 2
         x: 237
@@ -463,7 +463,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_4
+      name: OverheadAttack_04
       rect:
         serializedVersion: 2
         x: 316
@@ -484,7 +484,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_5
+      name: OverheadAttack_05
       rect:
         serializedVersion: 2
         x: 395
@@ -505,7 +505,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_6
+      name: OverheadAttack_06
       rect:
         serializedVersion: 2
         x: 474
@@ -526,7 +526,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_7
+      name: OverheadAttack_07
       rect:
         serializedVersion: 2
         x: 553
@@ -547,7 +547,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_8
+      name: OverheadAttack_08
       rect:
         serializedVersion: 2
         x: 632
@@ -568,7 +568,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_9
+      name: OverheadAttack_09
       rect:
         serializedVersion: 2
         x: 711
@@ -589,7 +589,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_10
+      name: OverheadAttack_10
       rect:
         serializedVersion: 2
         x: 790
@@ -610,7 +610,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_11
+      name: OverheadAttack_11
       rect:
         serializedVersion: 2
         x: 869
@@ -631,7 +631,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_12
+      name: OverheadAttack_12
       rect:
         serializedVersion: 2
         x: 948
@@ -652,7 +652,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_13
+      name: OverheadAttack_13
       rect:
         serializedVersion: 2
         x: 1027
@@ -673,7 +673,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_14
+      name: SlashAttack_00
       rect:
         serializedVersion: 2
         x: 0
@@ -694,7 +694,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_15
+      name: SlashAttack_01
       rect:
         serializedVersion: 2
         x: 79
@@ -715,7 +715,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_16
+      name: SlashAttack_02
       rect:
         serializedVersion: 2
         x: 158
@@ -736,7 +736,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_17
+      name: SlashAttack_03
       rect:
         serializedVersion: 2
         x: 237
@@ -757,7 +757,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_18
+      name: SlashAttack_04
       rect:
         serializedVersion: 2
         x: 316
@@ -778,7 +778,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_19
+      name: SlashAttack_05
       rect:
         serializedVersion: 2
         x: 395
@@ -799,7 +799,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_20
+      name: SlashAttack_06
       rect:
         serializedVersion: 2
         x: 474
@@ -820,7 +820,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_21
+      name: SlashAttack_07
       rect:
         serializedVersion: 2
         x: 553
@@ -841,7 +841,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_22
+      name: SlashAttack_08
       rect:
         serializedVersion: 2
         x: 632
@@ -862,7 +862,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_23
+      name: SlashAttack_09
       rect:
         serializedVersion: 2
         x: 711
@@ -883,7 +883,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_24
+      name: SlashAttack_10
       rect:
         serializedVersion: 2
         x: 790
@@ -904,7 +904,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_25
+      name: SlashAttack_11
       rect:
         serializedVersion: 2
         x: 869
@@ -925,7 +925,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_26
+      name: SlashAttack_12
       rect:
         serializedVersion: 2
         x: 948
@@ -946,7 +946,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_27
+      name: StabAttack_00
       rect:
         serializedVersion: 2
         x: 0
@@ -967,7 +967,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_28
+      name: StabAttack_01
       rect:
         serializedVersion: 2
         x: 79
@@ -988,7 +988,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_29
+      name: StabAttack_02
       rect:
         serializedVersion: 2
         x: 158
@@ -1009,7 +1009,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_30
+      name: StabAttack_03
       rect:
         serializedVersion: 2
         x: 237
@@ -1030,7 +1030,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_31
+      name: StabAttack_04
       rect:
         serializedVersion: 2
         x: 316
@@ -1051,7 +1051,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_32
+      name: StabAttack_05
       rect:
         serializedVersion: 2
         x: 395
@@ -1072,7 +1072,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_33
+      name: StabAttack_06
       rect:
         serializedVersion: 2
         x: 474
@@ -1093,7 +1093,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_34
+      name: StabAttack_07
       rect:
         serializedVersion: 2
         x: 553
@@ -1114,7 +1114,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_35
+      name: StabAttack_08
       rect:
         serializedVersion: 2
         x: 632
@@ -1135,7 +1135,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_36
+      name: StabAttack_09
       rect:
         serializedVersion: 2
         x: 711
@@ -1156,7 +1156,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_37
+      name: StabAttack_10
       rect:
         serializedVersion: 2
         x: 790
@@ -1177,7 +1177,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_38
+      name: StabAttack_11
       rect:
         serializedVersion: 2
         x: 869
@@ -1198,7 +1198,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_39
+      name: StabAttack_12
       rect:
         serializedVersion: 2
         x: 948
@@ -1219,7 +1219,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_40
+      name: StabAttack_13
       rect:
         serializedVersion: 2
         x: 1027
@@ -1240,7 +1240,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_41
+      name: Die_00
       rect:
         serializedVersion: 2
         x: 0
@@ -1261,7 +1261,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_42
+      name: Die_01
       rect:
         serializedVersion: 2
         x: 79
@@ -1282,7 +1282,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_43
+      name: Die_02
       rect:
         serializedVersion: 2
         x: 158
@@ -1303,7 +1303,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_44
+      name: Die_03
       rect:
         serializedVersion: 2
         x: 237
@@ -1324,7 +1324,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_45
+      name: Die_04
       rect:
         serializedVersion: 2
         x: 316
@@ -1345,7 +1345,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_46
+      name: Die_05
       rect:
         serializedVersion: 2
         x: 395
@@ -1366,7 +1366,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_47
+      name: Die_06
       rect:
         serializedVersion: 2
         x: 474
@@ -1387,7 +1387,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_48
+      name: Die_07
       rect:
         serializedVersion: 2
         x: 553
@@ -1408,7 +1408,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_49
+      name: Die_08
       rect:
         serializedVersion: 2
         x: 632
@@ -1429,7 +1429,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_50
+      name: Die_09
       rect:
         serializedVersion: 2
         x: 711
@@ -1450,7 +1450,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_51
+      name: FallLoop_00
       rect:
         serializedVersion: 2
         x: 0
@@ -1471,7 +1471,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_52
+      name: FallLoop_01
       rect:
         serializedVersion: 2
         x: 79
@@ -1492,7 +1492,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_53
+      name: TakeDamage_00
       rect:
         serializedVersion: 2
         x: 0
@@ -1513,7 +1513,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_54
+      name: TakeDamage_01
       rect:
         serializedVersion: 2
         x: 79
@@ -1534,7 +1534,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_55
+      name: TakeDamage_02
       rect:
         serializedVersion: 2
         x: 158
@@ -1555,7 +1555,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_56
+      name: TakeDamage_03
       rect:
         serializedVersion: 2
         x: 237
@@ -1576,7 +1576,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_57
+      name: TakeDamage_04
       rect:
         serializedVersion: 2
         x: 316
@@ -1597,7 +1597,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_58
+      name: GuardLoop_00
       rect:
         serializedVersion: 2
         x: 0
@@ -1618,7 +1618,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_59
+      name: GuardLoop_01
       rect:
         serializedVersion: 2
         x: 79
@@ -1639,7 +1639,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_60
+      name: GuardLoop_02
       rect:
         serializedVersion: 2
         x: 158
@@ -1660,7 +1660,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_61
+      name: GuardLoop_03
       rect:
         serializedVersion: 2
         x: 237
@@ -1681,7 +1681,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_62
+      name: GuardLoop_04
       rect:
         serializedVersion: 2
         x: 316
@@ -1702,7 +1702,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_63
+      name: GuardLoop_05
       rect:
         serializedVersion: 2
         x: 395
@@ -1723,7 +1723,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_64
+      name: GuardDown_00
       rect:
         serializedVersion: 2
         x: 0
@@ -1744,7 +1744,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_65
+      name: GuardDown_01
       rect:
         serializedVersion: 2
         x: 79
@@ -1765,7 +1765,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_66
+      name: GuardDown_02
       rect:
         serializedVersion: 2
         x: 158
@@ -1786,7 +1786,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_67
+      name: GuardDown_03
       rect:
         serializedVersion: 2
         x: 237
@@ -1807,7 +1807,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_68
+      name: GuardUp_00
       rect:
         serializedVersion: 2
         x: 0
@@ -1828,7 +1828,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_69
+      name: GuardUp_01
       rect:
         serializedVersion: 2
         x: 79
@@ -1849,7 +1849,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_70
+      name: GuardUp_02
       rect:
         serializedVersion: 2
         x: 158
@@ -1870,7 +1870,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_71
+      name: GuardUp_03
       rect:
         serializedVersion: 2
         x: 237
@@ -1891,7 +1891,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_72
+      name: IdleLoop_00
       rect:
         serializedVersion: 2
         x: 0
@@ -1912,7 +1912,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_73
+      name: IdleLoop_01
       rect:
         serializedVersion: 2
         x: 79
@@ -1933,7 +1933,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_74
+      name: IdleLoop_02
       rect:
         serializedVersion: 2
         x: 158
@@ -1954,7 +1954,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_75
+      name: IdleLoop_03
       rect:
         serializedVersion: 2
         x: 237
@@ -1975,7 +1975,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_76
+      name: IdleLoop_04
       rect:
         serializedVersion: 2
         x: 316
@@ -1996,7 +1996,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_77
+      name: IdleLoop_05
       rect:
         serializedVersion: 2
         x: 395
@@ -2017,7 +2017,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_78
+      name: JumpBegin_00
       rect:
         serializedVersion: 2
         x: 0
@@ -2038,7 +2038,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_79
+      name: JumpBegin_01
       rect:
         serializedVersion: 2
         x: 79
@@ -2059,7 +2059,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_80
+      name: JumpBegin_02
       rect:
         serializedVersion: 2
         x: 158
@@ -2080,7 +2080,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_81
+      name: JumpBegin_03
       rect:
         serializedVersion: 2
         x: 237
@@ -2101,7 +2101,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_82
+      name: JumpBegin_04
       rect:
         serializedVersion: 2
         x: 316
@@ -2122,7 +2122,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_83
+      name: JumpBegin_05
       rect:
         serializedVersion: 2
         x: 395
@@ -2143,7 +2143,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_84
+      name: RunLoop_00
       rect:
         serializedVersion: 2
         x: 0
@@ -2164,7 +2164,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_85
+      name: RunLoop_01
       rect:
         serializedVersion: 2
         x: 79
@@ -2185,7 +2185,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_86
+      name: RunLoop_02
       rect:
         serializedVersion: 2
         x: 158
@@ -2206,7 +2206,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_87
+      name: RunLoop_03
       rect:
         serializedVersion: 2
         x: 237
@@ -2227,7 +2227,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_88
+      name: RunLoop_04
       rect:
         serializedVersion: 2
         x: 316
@@ -2248,7 +2248,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_89
+      name: RunLoop_05
       rect:
         serializedVersion: 2
         x: 395
@@ -2269,7 +2269,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_90
+      name: RunLoop_06
       rect:
         serializedVersion: 2
         x: 474
@@ -2290,7 +2290,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_91
+      name: RunLoop_07
       rect:
         serializedVersion: 2
         x: 553
