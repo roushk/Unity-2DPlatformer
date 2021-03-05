@@ -15,21 +15,34 @@ public class PlayerMovement : MonoBehaviour
 	[HideInInspector]
 	private float normalizedHorizontalSpeed = 0;
 
-	private CharacterController2D _controller;
-	private Animator _animator;
-	private RaycastHit2D _lastControllerColliderHit;
-	private Vector3 _velocity;
+	[HideInInspector]
+	private float normalizedVerticalSpeed = 0;
 
+	[HideInInspector]
+	private bool playerJumped = false;
+
+
+	private CharacterController2D controller;
+	private Animator animator;
+	private RaycastHit2D lastControllerColliderHit;
+	private Vector3 velocity;
+
+	enum PlayerFacing
+	{
+		Left,
+		Right
+	}
+	private PlayerFacing playerFacing = PlayerFacing.Right;
 
 	void Awake()
 	{
-		_animator = GetComponent<Animator>();
-		_controller = GetComponent<CharacterController2D>();
+		animator = GetComponent<Animator>();
+		controller = GetComponent<CharacterController2D>();
 
 		// listen to some events for illustration purposes
-		_controller.onControllerCollidedEvent += onControllerCollider;
-		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
-		_controller.onTriggerExitEvent += onTriggerExitEvent;
+		controller.onControllerCollidedEvent += onControllerCollider;
+		controller.onTriggerEnterEvent += onTriggerEnterEvent;
+		controller.onTriggerExitEvent += onTriggerExitEvent;
 	}
 
 
@@ -42,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 			return;
 
 		// logs any collider hits if uncommented. it gets noisy so it is commented out for the demo
-		//Debug.Log( "flags: " + _controller.collisionState + ", hit.normal: " + hit.normal );
+		//Debug.Log( "flags: " + controller.collisionState + ", hit.normal: " + hit.normal );
 	}
 
 
@@ -63,61 +76,106 @@ public class PlayerMovement : MonoBehaviour
 	// the Update loop contains a very simple example of moving the character around and controlling the animation
 	void Update()
 	{
-		if( _controller.isGrounded )
-			_velocity.y = 0;
 
-		if( Input.GetKey( KeyCode.D ) )
+/****************************************************************************************************************/
+//													Movement													//
+/****************************************************************************************************************/
+		//if on the ground
+		if(controller.isGrounded)
 		{
-			normalizedHorizontalSpeed = 1;
-			if( transform.localScale.x < 0f )
-				transform.localScale = new Vector3( -transform.localScale.x, transform.localScale.y, transform.localScale.z );
-
-			if( _controller.isGrounded )
-				_animator.SetBool("IsRunning", true);
+			velocity.y = 0;			
 		}
-		else if( Input.GetKey( KeyCode.A ) )
+		animator.SetBool("IsFalling", !controller.isGrounded);
+
+		normalizedHorizontalSpeed = Input.GetAxis("Horizontal");
+		normalizedVerticalSpeed = Input.GetAxis("Vertical");
+		playerJumped = Input.GetKeyDown(KeyCode.Space);
+
+		Debug.Log("Horizontal = " + normalizedHorizontalSpeed);
+		Debug.Log("Vertical = " + normalizedVerticalSpeed);
+		Debug.Log("Jump = " + playerJumped);
+
+		PlayerFacing oldFacing = playerFacing;
+		//If there is a new
+		if(velocity.x != 0)
 		{
-			normalizedHorizontalSpeed = -1;
-			if( transform.localScale.x > 0f )
-				transform.localScale = new Vector3( -transform.localScale.x, transform.localScale.y, transform.localScale.z );
-
-			if( _controller.isGrounded )
-				_animator.SetBool("IsRunning", true);
+			if(velocity.x > 0f )
+			{
+				playerFacing = PlayerFacing.Right;
+			}
+			else
+			{
+				playerFacing = PlayerFacing.Left;
+			}
 		}
-		else
+
+		//if we are now facing a new direction
+		if(oldFacing != playerFacing)
 		{
-			normalizedHorizontalSpeed = 0;
-			_animator.SetBool("IsRunning", false);
+			transform.localScale = new Vector3( -transform.localScale.x, transform.localScale.y, transform.localScale.z );
 		}
-
 
 		// we can only jump whilst grounded
-		if( _controller.isGrounded && Input.GetKeyDown( KeyCode.UpArrow ) )
+		if( controller.isGrounded && (normalizedVerticalSpeed > 0 || playerJumped))
 		{
-			_velocity.y = Mathf.Sqrt( 2f * jumpHeight * -gravity );
-			_animator.SetTrigger("PlayerJumped");
+			velocity.y = Mathf.Sqrt( 2f * jumpHeight * -gravity );
+			animator.SetTrigger("PlayerJumped");
 		}
 
 
 		// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
-		var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
-		_velocity.x = Mathf.Lerp( _velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor );
+		var smoothedMovementFactor = controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
+		velocity.x = Mathf.Lerp( velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor );
 
 		// apply gravity before moving
-		_velocity.y += gravity * Time.deltaTime;
+		velocity.y += gravity * Time.deltaTime;
 
 		// if holding down bump up our movement amount and turn off one way platform detection for a frame.
 		// this lets us jump down through one way platforms
-		if( _controller.isGrounded && Input.GetKey( KeyCode.DownArrow ) )
+		if(controller.isGrounded && normalizedVerticalSpeed < 0)
 		{
-			_velocity.y *= 3f;
-			_controller.ignoreOneWayPlatformsThisFrame = true;
+			velocity.y *= 3f;
+			controller.ignoreOneWayPlatformsThisFrame = true;
 		}
 
-		_controller.move( _velocity * Time.deltaTime );
+		//now update blocking
+		bool isGuarding = Input.GetAxis("Fire2") > 0;
+		animator.SetBool("IsGuarding", isGuarding);
 
-		// grab our current _velocity to use as a base for all calculations
-		_velocity = _controller.velocity;
+		if(isGuarding && controller.isGrounded)
+		{
+			velocity.x = 0;
+			velocity.y = 0;			
+		}
+
+		//Only set running if we are moving and grounded
+		animator.SetBool("IsRunning", normalizedHorizontalSpeed != 0 && controller.isGrounded && velocity.x != 0);
+		
+		controller.move( velocity * Time.deltaTime );
+
+		// grab our current velocity to use as a base for all calculations
+		velocity = controller.velocity;
+
+/****************************************************************************************************************/
+//													Attacks														//
+/****************************************************************************************************************/
+
+		if(Input.GetMouseButtonDown(0))
+		{
+			//animator.SetTrigger("SlashAttack");
+			animator.Play("SlashAttack");
+		}
+		else if(Input.GetKeyDown(KeyCode.Q))
+		{
+			//animator.SetTrigger("StabAttack");
+			animator.Play("StabAttack");
+
+		}
+		else if(Input.GetKeyDown(KeyCode.E))
+		{
+			//animator.SetTrigger("OverheadAttack");
+			animator.Play("OverheadAttack");
+		}	
+		
 	}
-
 }
