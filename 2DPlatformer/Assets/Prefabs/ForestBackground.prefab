@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5984452253889611308}
   - component: {fileID: 7878198327772109473}
+  - component: {fileID: 4652723894951484590}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Untagged
@@ -82,6 +83,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4652723894951484590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2539989306686500799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd315680163b37e4e92d3824142aa04e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 100
 --- !u!1 &4617382027369754257
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3939587860951824593}
   - component: {fileID: 2254188758574441003}
+  - component: {fileID: 2524999093328835896}
   m_Layer: 0
   m_Name: Tree1
   m_TagString: Untagged
@@ -166,7 +181,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bbe6f5fc10a5ad9468cee68b42a0e2cf, type: 2}
+  - {fileID: 2100000, guid: 0a15ccc3233c83445bc87a4b0385d07b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -198,6 +213,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2524999093328835896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4744387753500543842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd315680163b37e4e92d3824142aa04e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 75
 --- !u!1 &6953784078577460942
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7935933148450253291}
   - component: {fileID: 1483905857008346825}
+  - component: {fileID: 8898323693814735251}
   m_Layer: 0
   m_Name: Tree2
   m_TagString: Untagged
@@ -248,7 +277,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b61c59683addd95409b3047417760e1e, type: 2}
+  - {fileID: 2100000, guid: 0a15ccc3233c83445bc87a4b0385d07b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -280,6 +309,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8898323693814735251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6953784078577460942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd315680163b37e4e92d3824142aa04e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 50
 --- !u!1 &7842862915761767924
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,6 +332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1316446441613606424}
   - component: {fileID: 82933723638118717}
+  - component: {fileID: 3307815729847282390}
   m_Layer: 0
   m_Name: Tree3
   m_TagString: Untagged
@@ -330,7 +373,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4daa3097f149df8479e745d724c5ea58, type: 2}
+  - {fileID: 2100000, guid: 0a15ccc3233c83445bc87a4b0385d07b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -362,3 +405,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3307815729847282390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7842862915761767924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd315680163b37e4e92d3824142aa04e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 25

@@ -7,7 +7,6 @@ public class SmoothCamera : MonoBehaviour
 
     public Transform target;
     public Prime31.CharacterController2D targetRigid;
-    public PlayerMovement playerMove;
 
     public float smoothingSpeed = 5f;
     public float MovementVectorSmoothing = 0.4f;
