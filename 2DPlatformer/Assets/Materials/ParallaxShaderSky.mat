@@ -44,5 +44,6 @@ Material:
     - Vector1_fbf034db2661437daa58ea8165bb8e48: 75
     - _PerRendererData__ScrollSpeed: 25
     - _ScrollSpeed: 100
-    m_Colors: []
+    m_Colors:
+    - _ScrollSpeed: {r: 100, g: 20, b: 0, a: 0}
   m_BuildTextureStacks: []

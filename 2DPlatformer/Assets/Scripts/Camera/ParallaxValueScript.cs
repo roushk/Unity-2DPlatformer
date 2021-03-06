@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ParallaxValueScript : MonoBehaviour
 {
-    public float scrollSpeed = 50;
+    //Generally y = 0.2 * X speed
+    public Vector2 scrollSpeed = new Vector2(100,20);
+
     private MaterialPropertyBlock materialPropertyBlock;
     private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
@@ -21,7 +23,7 @@ public class ParallaxValueScript : MonoBehaviour
         MaterialPropertyBlock materialPropertyBlock = new MaterialPropertyBlock();
 
         spriteRenderer.GetPropertyBlock(materialPropertyBlock);
-        materialPropertyBlock.SetFloat("_ScrollSpeed", scrollSpeed);
+        materialPropertyBlock.SetVector("_ScrollSpeed", scrollSpeed);
         spriteRenderer.SetPropertyBlock(materialPropertyBlock);
     }
 }

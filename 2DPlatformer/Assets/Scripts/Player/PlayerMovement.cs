@@ -96,18 +96,17 @@ public class PlayerMovement : MonoBehaviour
 		Debug.Log("Jump = " + playerJumped);
 
 		PlayerFacing oldFacing = playerFacing;
-		//If there is a new
-		if(velocity.x != 0)
+
+		//Else if because if not moving we want to face the same direction
+		if(velocity.x > 0f && normalizedHorizontalSpeed > 0)
 		{
-			if(velocity.x > 0f )
-			{
-				playerFacing = PlayerFacing.Right;
-			}
-			else
-			{
-				playerFacing = PlayerFacing.Left;
-			}
+			playerFacing = PlayerFacing.Right;
 		}
+		else if (velocity.x < 0f && normalizedHorizontalSpeed < 0)
+		{
+			playerFacing = PlayerFacing.Left;
+		}
+		
 
 		//if we are now facing a new direction
 		if(oldFacing != playerFacing)
