@@ -115,6 +115,11 @@ public class CharacterController2D : MonoBehaviour
 	/// <value>The jumping threshold.</value>
 	public float jumpingThreshold = 0.07f;
 
+	/// <summary>
+	/// the threshold in the change in vertical movement between frames that constitutes falling
+	/// </summary>
+	/// <value>The falling threshold.</value>
+	public float fallingThreshhold = 0.07f;
 
 	/// <summary>
 	/// curve for multiplying speed based on slope (negative = down slope and positive = up slope)
@@ -175,11 +180,11 @@ public class CharacterController2D : MonoBehaviour
 	// we use this flag to mark the case where we are travelling up a slope and we modified our delta.y to allow the climb to occur.
 	// the reason is so that if we reach the end of the slope we can make an adjustment to stay grounded
 	bool _isGoingUpSlope = false;
-
+	bool _isGoingDownSlope = false;
 
 	#region Monobehaviour
 
-	void Awake()
+		void Awake()
 	{
 		// add our one-way platforms to our normal platform mask so that we can land on them from above
 		platformMask |= oneWayPlatformMask;
@@ -248,6 +253,7 @@ public class CharacterController2D : MonoBehaviour
 		collisionState.reset();
 		_raycastHitsThisFrame.Clear();
 		_isGoingUpSlope = false;
+		_isGoingDownSlope = false;
 
 		primeRaycastOrigins();
 
@@ -278,11 +284,11 @@ public class CharacterController2D : MonoBehaviour
 			collisionState.becameGroundedThisFrame = true;
 
 		// if we are going up a slope we artificially set a y velocity so we need to zero it out here
-		if( _isGoingUpSlope )
+		if( _isGoingUpSlope || _isGoingDownSlope)
 			velocity.y = 0;
 
-		// send off the collision events if we have a listener
-		if( onControllerCollidedEvent != null )
+			// send off the collision events if we have a listener
+			if ( onControllerCollidedEvent != null )
 		{
 			for( var i = 0; i < _raycastHitsThisFrame.Count; i++ )
 				onControllerCollidedEvent( _raycastHitsThisFrame[i] );
@@ -429,7 +435,7 @@ public class CharacterController2D : MonoBehaviour
 		{
 			// we only need to adjust the deltaMovement if we are not jumping
 			// TODO: this uses a magic number which isn't ideal! The alternative is to have the user pass in if there is a jump this frame
-			if( deltaMovement.y < jumpingThreshold )
+			if( deltaMovement.y < jumpingThreshold)
 			{
 				// apply the slopeModifier to slow our movement up the slope
 				var slopeModifier = slopeSpeedMultiplier.Evaluate( angle );
@@ -477,6 +483,8 @@ public class CharacterController2D : MonoBehaviour
 	void moveVertically( ref Vector3 deltaMovement )
 	{
 		var isGoingUp = deltaMovement.y > 0;
+		var isGoingDown = deltaMovement.y < 0;
+
 		var rayDistance = Mathf.Abs( deltaMovement.y ) + _skinWidth;
 		var rayDirection = isGoingUp ? Vector2.up : -Vector2.up;
 		var initialRayOrigin = isGoingUp ? _raycastOrigins.topLeft : _raycastOrigins.bottomLeft;
@@ -520,9 +528,12 @@ public class CharacterController2D : MonoBehaviour
 				if( !isGoingUp && deltaMovement.y > 0.00001f )
 					_isGoingUpSlope = true;
 
-				// we add a small fudge factor for the float operations here. if our rayDistance is smaller
-				// than the width + fudge bail out because we have a direct impact
-				if( rayDistance < _skinWidth + kSkinWidthFloatFudgeFactor )
+				if (!isGoingDown && deltaMovement.y < 0.00001f)
+					_isGoingDownSlope = true;
+
+					// we add a small fudge factor for the float operations here. if our rayDistance is smaller
+					// than the width + fudge bail out because we have a direct impact
+					if ( rayDistance < _skinWidth + kSkinWidthFloatFudgeFactor )
 					break;
 			}
 		}

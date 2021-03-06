@@ -27,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
 	private RaycastHit2D lastControllerColliderHit;
 	private Vector3 velocity;
 
+	private float notGroundedTimer = 0;
+	private float minFallingToAnimate = 0.1f;	//100 ms
+
 	enum PlayerFacing
 	{
 		Left,
@@ -83,9 +86,18 @@ public class PlayerMovement : MonoBehaviour
 		//if on the ground
 		if(controller.isGrounded)
 		{
-			velocity.y = 0;			
+			velocity.y = 0;
+			notGroundedTimer = 0;
 		}
-		animator.SetBool("IsFalling", !controller.isGrounded);
+		else
+        {
+			notGroundedTimer += Time.deltaTime;
+        }
+		if(!controller.isGrounded && notGroundedTimer > minFallingToAnimate)
+        {
+			print("is this what my life has come to");
+        }
+		animator.SetBool("IsFalling", !controller.isGrounded && notGroundedTimer > minFallingToAnimate);
 
 		normalizedHorizontalSpeed = Input.GetAxis("Horizontal");
 		normalizedVerticalSpeed = Input.GetAxis("Vertical");
