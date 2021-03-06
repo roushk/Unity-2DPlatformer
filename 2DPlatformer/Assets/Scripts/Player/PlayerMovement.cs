@@ -93,11 +93,13 @@ public class PlayerMovement : MonoBehaviour
         {
 			notGroundedTimer += Time.deltaTime;
         }
-		if(!controller.isGrounded && notGroundedTimer > minFallingToAnimate)
+		//animator.SetBool("IsFalling", !controller.isGrounded && notGroundedTimer > minFallingToAnimate);
+		animator.SetBool("IsFalling", false);
+		if (!controller.isGrounded && notGroundedTimer > minFallingToAnimate)
         {
 			print("is this what my life has come to");
-        }
-		animator.SetBool("IsFalling", !controller.isGrounded && notGroundedTimer > minFallingToAnimate);
+			animator.SetBool("IsFalling", true);
+		}
 
 		normalizedHorizontalSpeed = Input.GetAxis("Horizontal");
 		normalizedVerticalSpeed = Input.GetAxis("Vertical");
@@ -127,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 
 		// we can only jump whilst grounded
-		if( controller.isGrounded && (normalizedVerticalSpeed > 0 || playerJumped))
+		if(controller.isGrounded && (normalizedVerticalSpeed > 0 || playerJumped))
 		{
 			velocity.y = Mathf.Sqrt( 2f * jumpHeight * -gravity );
 			animator.SetTrigger("PlayerJumped");
@@ -160,7 +162,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 
 		//Only set running if we are moving and grounded
-		animator.SetBool("IsRunning", normalizedHorizontalSpeed != 0 && controller.isGrounded && velocity.x != 0);
+		animator.SetBool("IsRunning", normalizedHorizontalSpeed != 0 && (controller.isGrounded || notGroundedTimer < minFallingToAnimate) && velocity.x != 0);
 		
 		controller.move( velocity * Time.deltaTime );
 
