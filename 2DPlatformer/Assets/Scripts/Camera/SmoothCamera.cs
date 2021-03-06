@@ -19,7 +19,7 @@ public class SmoothCamera : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         Vector3 betterOffset = offset + new Vector3(targetRigid.velocity.x * MovementVectorSmoothing, targetRigid.velocity.y * MovementVectorSmoothing * 0.8f, -1);
 
