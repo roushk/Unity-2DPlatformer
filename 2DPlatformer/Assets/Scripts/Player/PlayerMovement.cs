@@ -97,7 +97,6 @@ public class PlayerMovement : MonoBehaviour
 		animator.SetBool("IsFalling", false);
 		if (!controller.isGrounded && notGroundedTimer > minFallingToAnimate)
         {
-			print("is this what my life has come to");
 			animator.SetBool("IsFalling", true);
 		}
 
@@ -105,9 +104,6 @@ public class PlayerMovement : MonoBehaviour
 		normalizedVerticalSpeed = Input.GetAxis("Vertical");
 		playerJumped = Input.GetKeyDown(KeyCode.Space);
 
-		Debug.Log("Horizontal = " + normalizedHorizontalSpeed);
-		Debug.Log("Vertical = " + normalizedVerticalSpeed);
-		Debug.Log("Jump = " + playerJumped);
 
 		PlayerFacing oldFacing = playerFacing;
 
