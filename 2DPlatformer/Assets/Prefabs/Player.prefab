@@ -169,9 +169,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1048492780}
   - component: {fileID: 1048492781}
-  m_Layer: 9
+  - component: {fileID: 1479551251}
+  - component: {fileID: 1479551250}
+  m_Layer: 8
   m_Name: SwordStabCollider
-  m_TagString: Untagged
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,7 +199,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048492779}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -215,7 +217,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.22703743, y: 0.23735952}
+    - - {x: 0.33257866, y: 0.14188743}
       - {x: 0.13397115, y: 0.14027646}
       - {x: -0.08135414, y: 0.1419785}
       - {x: -0.08714104, y: 0.14572549}
@@ -225,6 +227,40 @@ PolygonCollider2D:
       - {x: 0.12386894, y: -0.19504452}
       - {x: 0.30626297, y: -0.20476484}
       - {x: 0.5153036, y: -0.02340442}
+--- !u!50 &1479551251
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048492779}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!114 &1479551250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048492779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74a292c07210c574eb407a56c089d5c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!1 &1666552276
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,9 +271,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1666552277}
   - component: {fileID: 7224583419450551619}
-  m_Layer: 9
+  - component: {fileID: 1323268516}
+  - component: {fileID: 1323268515}
+  m_Layer: 8
   m_Name: SwordSlashCollider
-  m_TagString: Untagged
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,7 +301,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666552276}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -291,6 +329,40 @@ PolygonCollider2D:
       - {x: 0.36458933, y: -0.1368351}
       - {x: 0.46266937, y: -0.07972932}
       - {x: 0.48091602, y: -0.0064180493}
+--- !u!50 &1323268516
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666552276}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!114 &1323268515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666552276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74a292c07210c574eb407a56c089d5c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!1 &1872746900
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,9 +373,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1872746901}
   - component: {fileID: 811899589735044234}
-  m_Layer: 9
+  - component: {fileID: 319039626}
+  - component: {fileID: 319039625}
+  m_Layer: 8
   m_Name: SwordOverheadCollider
-  m_TagString: Untagged
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -329,7 +403,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872746900}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -361,6 +435,40 @@ PolygonCollider2D:
       - {x: -0.0379982, y: 0.3922031}
       - {x: -0.10474777, y: 0.35952997}
       - {x: -0.091098785, y: 0.30318284}
+--- !u!50 &319039626
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872746900}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!114 &319039625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872746900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74a292c07210c574eb407a56c089d5c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!1 &1895400876
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,6 +629,7 @@ GameObject:
   - component: {fileID: 7388523647742086641}
   - component: {fileID: 269150694}
   - component: {fileID: 6741639182579775124}
+  - component: {fileID: 711614053265216730}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -537,7 +646,7 @@ Transform:
   m_GameObject: {fileID: 7652625722810937861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1}
   m_Children:
   - {fileID: 410465010}
   - {fileID: 1048492780}
@@ -586,11 +695,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 5776891531103278535, guid: 8862584ac4b41264081e03ecf2f52aa7, type: 3}
+  m_Sprite: {fileID: -3223445060406688168, guid: 8862584ac4b41264081e03ecf2f52aa7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 1
   m_Size: {x: 0.79, y: 0.63}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -713,7 +822,7 @@ BoxCollider2D:
     oldSize: {x: 0.79, y: 0.63}
     newSize: {x: 0.79, y: 0.63}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
@@ -729,7 +838,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 7652625722810937861}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 0.2
   m_LinearDrag: 10
@@ -779,3 +888,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47182ea5cb5d4c44083710f7394a1fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &711614053265216730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7652625722810937861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1c4de821f577c468b2d68226c803f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 10
+  maxHealth: 10
+  tagsThatDamage:
+  - EnemyAttack
