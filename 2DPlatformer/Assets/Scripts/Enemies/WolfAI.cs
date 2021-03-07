@@ -11,16 +11,18 @@ public class WolfAI : MonoBehaviour
 
     public PlayRandomSound growlSoundList;
     public PlayRandomSound takeDamageSoundList;
-    //public PlayRandomSound growlSoundList;
+    public PlayRandomSound deathSoundList;
 
 
     bool isAggro = false;
     bool justAggro = false;
 
+    bool firstFrameDead = true;
+
     private Transform target;
     private WolfMovement movement;
     private Animator animator;
-
+    private HealthAndDamage health;
 
 
     // Start is called before the first frame update
@@ -29,10 +31,21 @@ public class WolfAI : MonoBehaviour
         target = GameObject.Find("Player").transform;
         animator = GetComponent<Animator>();
         movement = GetComponent<WolfMovement>();
+        health = GetComponent<HealthAndDamage>();
     }
 
     void FixedUpdate()
     {
+        if (health.isDead)
+        {
+            if(firstFrameDead)
+            {
+                deathSoundList.PlaySound();
+                firstFrameDead = false;
+            }
+
+            return;
+        }
         //Maybe use 1d but breaks if wolf is above/below and in aggro range
         float distToPlayerX = Vector3.Distance(transform.position,target.position);
 

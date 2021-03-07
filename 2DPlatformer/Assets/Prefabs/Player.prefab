@@ -900,7 +900,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a1c4de821f577c468b2d68226c803f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHearts: 3
   currentHealth: 10
   maxHealth: 10
   tagsThatDamage:
   - EnemyAttack
+  isDead: 0

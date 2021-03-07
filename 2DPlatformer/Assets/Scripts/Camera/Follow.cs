@@ -5,6 +5,9 @@ using UnityEngine;
 public class Follow : MonoBehaviour
 {
     public GameObject objToFollow;
+    public float lerpSpeed = 1.0f;
+    public Vector3 offset = new Vector3(0, 0, 0);
+
 
     private Transform transformToFollow;
     // Start is called before the first frame update
@@ -16,6 +19,6 @@ public class Follow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = transformToFollow.position;
+        transform.position = Vector3.Lerp(transform.position, transformToFollow.position + offset, lerpSpeed);
     }
 }
