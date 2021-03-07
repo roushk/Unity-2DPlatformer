@@ -47719,6 +47719,14 @@ PrefabInstance:
       propertyPath: obj
       value: 
       objectReference: {fileID: 269150694}
+    - target: {fileID: 986845862760437109, guid: ebaad96344ee4764980fcee071436548, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 986845862760437109, guid: ebaad96344ee4764980fcee071436548, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1131355681653151353, guid: ebaad96344ee4764980fcee071436548, type: 3}
       propertyPath: m_Name
       value: PlayerHealthBar
@@ -47765,6 +47773,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571248823696308912, guid: ebaad96344ee4764980fcee071436548, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085288827717485028, guid: ebaad96344ee4764980fcee071436548, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085288827717485028, guid: ebaad96344ee4764980fcee071436548, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783270761204531688, guid: ebaad96344ee4764980fcee071436548, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783270761204531688, guid: ebaad96344ee4764980fcee071436548, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
