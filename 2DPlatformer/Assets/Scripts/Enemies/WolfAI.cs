@@ -34,7 +34,7 @@ public class WolfAI : MonoBehaviour
         health = GetComponent<HealthAndDamage>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (health.isDead)
         {
@@ -46,6 +46,12 @@ public class WolfAI : MonoBehaviour
 
             return;
         }
+
+        if(health.justTakenDamage)
+        {
+            takeDamageSoundList.PlaySound();
+        }
+
         //Maybe use 1d but breaks if wolf is above/below and in aggro range
         float distToPlayerX = Vector3.Distance(transform.position,target.position);
 

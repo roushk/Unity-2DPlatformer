@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+  knockback: 1
 --- !u!1 &5603978394118436343
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,8 +120,9 @@ GameObject:
   - component: {fileID: 6391624077320100707}
   - component: {fileID: 1166131146317895618}
   - component: {fileID: 2130143600}
+  - component: {fileID: 8755616684150534748}
   m_Layer: 10
-  m_Name: WolfEnemy
+  m_Name: Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,7 +162,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bfb92af4db2c31544ba5065af8d7d3f3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -541,3 +543,18 @@ MonoBehaviour:
   tagsThatDamage:
   - PlayerAttack
   isDead: 0
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  oldColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &8755616684150534748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5603978394118436343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2bed024b7d7e448a9e2b0822164a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tint: {r: 0, g: 0, b: 0, a: 0}

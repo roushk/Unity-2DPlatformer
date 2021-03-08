@@ -39,17 +39,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8985783980887371725}
     m_Modifications:
+    - target: {fileID: 128716501, guid: 00840c92d24a4454aa68d38f4811f46d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bfb92af4db2c31544ba5065af8d7d3f3, type: 2}
+    - target: {fileID: 128716503, guid: 00840c92d24a4454aa68d38f4811f46d, type: 3}
+      propertyPath: groundDamping
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 715710016198363855, guid: 00840c92d24a4454aa68d38f4811f46d, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 715710016198363855, guid: 00840c92d24a4454aa68d38f4811f46d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.554
+      value: -22.591
       objectReference: {fileID: 0}
     - target: {fileID: 715710016198363855, guid: 00840c92d24a4454aa68d38f4811f46d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.366
+      value: -3.381
       objectReference: {fileID: 0}
     - target: {fileID: 715710016198363855, guid: 00840c92d24a4454aa68d38f4811f46d, type: 3}
       propertyPath: m_LocalPosition.z
