@@ -12,6 +12,11 @@ public class PlayerMovement : MonoBehaviour
 	public float inAirDamping = 5f;
 	public float jumpHeight = 3f;
 
+	public bool movingAndAttacking = false;
+
+	[HideInInspector]
+	public bool isGuarding = false;
+
 	[HideInInspector]
 	private float normalizedHorizontalSpeed = 0;
 
@@ -21,14 +26,14 @@ public class PlayerMovement : MonoBehaviour
 	[HideInInspector]
 	private bool playerJumped = false;
 
-
 	private CharacterController2D controller;
 	private Animator animator;
+	private HealthAndDamage health;
 	private RaycastHit2D lastControllerColliderHit;
 	private Vector3 velocity;
 
 	private float notGroundedTimer = 0;
-	private float minFallingToAnimate = 0.1f;	//100 ms
+	private float minFallingToAnimate = 0.1f;   //100 ms
 
 	enum PlayerFacing
 	{
@@ -41,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		animator = GetComponent<Animator>();
 		controller = GetComponent<CharacterController2D>();
+		health = GetComponent<HealthAndDamage>();
 
 		// listen to some events for illustration purposes
 		controller.onControllerCollidedEvent += onControllerCollider;
@@ -75,15 +81,13 @@ public class PlayerMovement : MonoBehaviour
 
 	#endregion
 
-
-	// the Update loop contains a very simple example of moving the character around and controlling the animation
 	void Update()
 	{
 
 /****************************************************************************************************************/
 //													Movement													//
 /****************************************************************************************************************/
-		//if on the ground
+
 		if(controller.isGrounded)
 		{
 			velocity.y = 0;
@@ -93,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
         {
 			notGroundedTimer += Time.deltaTime;
         }
-		//animator.SetBool("IsFalling", !controller.isGrounded && notGroundedTimer > minFallingToAnimate);
+
 		animator.SetBool("IsFalling", false);
 		if (!controller.isGrounded && notGroundedTimer > minFallingToAnimate)
         {
@@ -104,33 +108,15 @@ public class PlayerMovement : MonoBehaviour
 		normalizedVerticalSpeed = Input.GetAxis("Vertical");
 		playerJumped = Input.GetKeyDown(KeyCode.Space);
 
+/****************************************************************************************************************/
+//									Player Jumping and movement smoothing										//
+/****************************************************************************************************************/
 
-		PlayerFacing oldFacing = playerFacing;
-
-		//Else if because if not moving we want to face the same direction
-		if(velocity.x > 0f && normalizedHorizontalSpeed > 0)
-		{
-			playerFacing = PlayerFacing.Right;
-		}
-		else if (velocity.x < 0f && normalizedHorizontalSpeed < 0)
-		{
-			playerFacing = PlayerFacing.Left;
-		}
-		
-
-		//if we are now facing a new direction
-		if(oldFacing != playerFacing)
-		{
-			transform.localScale = new Vector3( -transform.localScale.x, transform.localScale.y, transform.localScale.z );
-		}
-
-		// we can only jump whilst grounded
-		if(controller.isGrounded && (normalizedVerticalSpeed > 0 || playerJumped))
+		if (controller.isGrounded && (normalizedVerticalSpeed > 0 || playerJumped))
 		{
 			velocity.y = Mathf.Sqrt( 2f * jumpHeight * -gravity );
 			animator.SetTrigger("PlayerJumped");
 		}
-
 
 		// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
 		var smoothedMovementFactor = controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
@@ -147,15 +133,68 @@ public class PlayerMovement : MonoBehaviour
 			controller.ignoreOneWayPlatformsThisFrame = true;
 		}
 
-		//now update blocking
-		bool isGuarding = Input.GetAxis("Fire2") > 0;
+
+/****************************************************************************************************************/
+//											 Player Blocking													//
+/****************************************************************************************************************/
+
+		isGuarding = Input.GetAxis("Fire2") > 0;
 		animator.SetBool("IsGuarding", isGuarding);
 
-		if(isGuarding && controller.isGrounded)
-		{
-			velocity.x = 0;
-			velocity.y = 0;			
+		if(isGuarding)
+        {
+			health.damageResitance = 2.0f;
 		}
+        else
+        {
+			health.damageResitance = 1.0f;
+        }
+
+		AnimatorStateInfo animatorInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+		if(movingAndAttacking == false)
+        {
+
+			if ((isGuarding && controller.isGrounded) || animatorInfo.IsName("SlashAttack") || animatorInfo.IsName("StabAttack") || animatorInfo.IsName("OverheadAttack"))
+			{
+				velocity.x = 0;
+				velocity.y = 0;			
+			}
+        }
+        else
+        {
+			if (isGuarding && controller.isGrounded)
+			{
+				velocity.x = 0;
+				velocity.y = 0;
+			}
+
+		}
+
+/****************************************************************************************************************/
+//												 Player Facing													//
+/****************************************************************************************************************/
+
+		PlayerFacing oldFacing = playerFacing;
+
+		if (velocity.x > 0f && normalizedHorizontalSpeed > 0)
+		{
+			playerFacing = PlayerFacing.Right;
+		}
+		else if (velocity.x < 0f && normalizedHorizontalSpeed < 0)
+		{
+			playerFacing = PlayerFacing.Left;
+		}
+
+		//if we are now facing a new direction
+		if (oldFacing != playerFacing)
+		{
+			transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+		}
+
+/****************************************************************************************************************/
+//										 Player Final Movement Updates											//
+/****************************************************************************************************************/
 
 		//Only set running if we are moving and grounded
 		animator.SetBool("IsRunning", normalizedHorizontalSpeed != 0 && (controller.isGrounded || notGroundedTimer < minFallingToAnimate) && velocity.x != 0);
@@ -169,18 +208,18 @@ public class PlayerMovement : MonoBehaviour
 //													Attacks														//
 /****************************************************************************************************************/
 
-		if(Input.GetMouseButtonDown(0))
+		if(Input.GetMouseButtonDown(0) && (controller.isGrounded || !movingAndAttacking))
 		{
 			//animator.SetTrigger("SlashAttack");
 			animator.Play("SlashAttack");
 		}
-		else if(Input.GetKeyDown(KeyCode.Q))
+		else if(Input.GetKeyDown(KeyCode.Q) && (controller.isGrounded || !movingAndAttacking))
 		{
 			//animator.SetTrigger("StabAttack");
 			animator.Play("StabAttack");
 
 		}
-		else if(Input.GetKeyDown(KeyCode.E))
+		else if(Input.GetKeyDown(KeyCode.E) && (controller.isGrounded || !movingAndAttacking))
 		{
 			//animator.SetTrigger("OverheadAttack");
 			animator.Play("OverheadAttack");

@@ -30,9 +30,10 @@ public class PlayRandomSound : MonoBehaviour
     }
 
     //Call play sound to play a random sound from the range of the attached stuff
-    public void PlaySound()
+    public void PlaySound(float initialOffset = 0)
     {
         audioSource.clip = audioSources[Random.Range(0, audioSources.Length)];
+        audioSource.time = initialOffset;
         audioSource.Play();
     }
 }

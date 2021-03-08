@@ -6,8 +6,8 @@ using UnityEngine;
 public class HealthAndDamage : MonoBehaviour
 {
     public int currentHearts = 0;
-    public int currentHealth = 10;
-    public int maxHealth = 10;
+    public float currentHealth = 10;
+    public float maxHealth = 10;
 
     public List<string> tagsThatDamage;
 
@@ -31,10 +31,12 @@ public class HealthAndDamage : MonoBehaviour
 
     float knockbackResistance = 1.0f;
 
+    public float damageResitance = 1.0f;   //scale of 1 to inf
+
     [HideInInspector]
     public bool justTakenDamage = false;
 
-    int healthLastFrame = 0;
+    private float healthLastFrame = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -92,11 +94,11 @@ public class HealthAndDamage : MonoBehaviour
         justTakenDamage = false;
     }
 
-    public void TryTakeDamage(string tag, int damage, float knockback, Vector3 otherObjectPos)
+    public void TryTakeDamage(string tag, float damage, float knockback, Vector3 otherObjectPos)
     {
-        if (tagsThatDamage.Contains(tag) && !isInvincible)
+        if (tagsThatDamage.Contains(tag) && !isInvincible && !isDead)
         {
-            currentHealth -= damage;
+            currentHealth -= Mathf.Clamp(damage * (1.0f / damageResitance),0,10);    //most damage you can take is 10
 
             //reset invincibility timer to stop taking lots of damage at once
             invincibilityTime = 0;
