@@ -44,6 +44,8 @@ public class WolfAI : MonoBehaviour
                 firstFrameDead = false;
             }
 
+            //stop dead wolfs jumping
+            movement.moveTowardPos = transform.position;
             return;
         }
 
