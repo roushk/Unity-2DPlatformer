@@ -45144,6 +45144,10 @@ PrefabInstance:
       propertyPath: m_ClearFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 721956552, guid: 509ae92c347ccff40b64a041aa42286f, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1449860670, guid: 509ae92c347ccff40b64a041aa42286f, type: 3}
       propertyPath: m_CameraType
       value: 0
@@ -45992,11 +45996,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8502209263191674813, guid: 754959a97ab3782469c53a5d2b0fc7d7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 7.5
+      value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 8502209263191674813, guid: 754959a97ab3782469c53a5d2b0fc7d7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4.5000005
+      value: 1.5175669
       objectReference: {fileID: 0}
     - target: {fileID: 8502209263191674813, guid: 754959a97ab3782469c53a5d2b0fc7d7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -46004,7 +46008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8502209263191674813, guid: 754959a97ab3782469c53a5d2b0fc7d7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.2287
+      value: -3.4684
       objectReference: {fileID: 0}
     - target: {fileID: 8502209263191674813, guid: 754959a97ab3782469c53a5d2b0fc7d7, type: 3}
       propertyPath: m_LocalPosition.z
