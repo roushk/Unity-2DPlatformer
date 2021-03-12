@@ -385,6 +385,7 @@ MonoBehaviour:
   takeDamageSoundList: {fileID: 1166131146317895618}
   deathSoundList: {fileID: 6391624077320100707}
   fellowAggroSoundList: {fileID: 3298769059082109256}
+  aggroByFriend: 1
 --- !u!82 &3001635559583326967
 AudioSource:
   m_ObjectHideFlags: 0
@@ -494,11 +495,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 3001635559583326967}
-  audioSources:
+  audioClips:
   - {fileID: 8300000, guid: 5270e6a7a59f09d49b41ff6fb02120e1, type: 3}
-  - {fileID: 8300000, guid: f0c1dca368da10a46b59ae62ab06f500, type: 3}
   - {fileID: 8300000, guid: 8ce6a6d58f24fd34eac60ce9f00e0919, type: 3}
-  - {fileID: 8300000, guid: cac8e2e854eaa884e89e74e8a8b7d986, type: 3}
   continuous: 0
 --- !u!82 &4514327845776298406
 AudioSource:
@@ -609,7 +608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 4514327845776298406}
-  audioSources:
+  audioClips:
   - {fileID: 8300000, guid: 8fd7fb853f75f6143b1a847f8b14f069, type: 3}
   continuous: 0
 --- !u!82 &5131534062198050590
@@ -721,9 +720,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 5131534062198050590}
-  audioSources:
-  - {fileID: 8300000, guid: 03161becde3816942960bbe195500f13, type: 3}
+  audioClips:
   - {fileID: 8300000, guid: c767278bb88344148bdcf5644b1947c3, type: 3}
+  - {fileID: 8300000, guid: 03161becde3816942960bbe195500f13, type: 3}
   continuous: 0
 --- !u!82 &5191765881468851656
 AudioSource:
@@ -834,7 +833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 5191765881468851656}
-  audioSources:
+  audioClips:
   - {fileID: 8300000, guid: c63341c9052683544916550caf834732, type: 3}
   continuous: 0
 --- !u!114 &2130143600

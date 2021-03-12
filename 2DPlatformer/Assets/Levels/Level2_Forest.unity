@@ -45818,6 +45818,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7652625722810937861, guid: 2768d865fd7ad3946a4d36548ec33f07, type: 3}
   m_PrefabInstance: {fileID: 2130568091}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &974348987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974348986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66dd66bca1fb2941a6d718f5922cb20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatMusicMinRadius: 3.5
+  combatMusicMaxRadius: 5
 --- !u!1001 &991040104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48397,6 +48411,10 @@ PrefabInstance:
     - target: {fileID: 1222340294705948297, guid: ea5c2c60959df194fad145066bb89e42, type: 3}
       propertyPath: m_LocalPosition.y
       value: -3.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193664950179346504, guid: ea5c2c60959df194fad145066bb89e42, type: 3}
+      propertyPath: audioClips.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8985783980887371725, guid: ea5c2c60959df194fad145066bb89e42, type: 3}
       propertyPath: m_RootOrder

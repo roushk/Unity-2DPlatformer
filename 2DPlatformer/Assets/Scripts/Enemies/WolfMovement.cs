@@ -32,7 +32,6 @@ public class WolfMovement : MonoBehaviour
 
 	private CharacterController2D controller;
 	private Animator animator;
-	private RaycastHit2D lastControllerColliderHit;
 	private Vector3 velocity;
 
 	private float notGroundedTimer = 0;

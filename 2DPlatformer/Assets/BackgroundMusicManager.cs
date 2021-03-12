@@ -15,7 +15,6 @@ public class BackgroundMusicManager : MonoBehaviour
     public AnimationCurve volumeToCurve;
 
     bool fadingToCombat = false;
-    bool fadingToExploration = false;
 
     float onCombatMusicVolume;
     float onExplorationMusicVolume;
@@ -23,24 +22,19 @@ public class BackgroundMusicManager : MonoBehaviour
     float offCombatMusicVolume = -80.0f;
     float offExplorationMusicVolume = -80.0f;
 
-
-    void FadeToCombat()
+    public void PlayCombatMusic()
     {
-        fadingToExploration = false;
-        fadingToCombat = true;
-
+        StartCoroutine(StartFade(true, 1.0f));
     }
 
-    void FadeToExploration()
+    public void PlayExplorationMusic()
     {
-        fadingToExploration = true;
-        fadingToCombat = false;
-
+        StartCoroutine(StartFade(false, 5.0f));
     }
 
-    
     public IEnumerator StartFade(bool toCombat, float duration)
     {
+        fadingToCombat = toCombat;
         AudioMixer fromAudioMixer;
         AudioMixer toAudioMixer;
         float currentTime = 0;
@@ -53,8 +47,11 @@ public class BackgroundMusicManager : MonoBehaviour
 
         string fromParam;
         string toParam;
+
+        bool currentlyFadingToCombat = toCombat;
         if (toCombat)
         {
+            fadingToCombat = true;
             fromAudioMixer = explorationMusicAMG.audioMixer;
             toAudioMixer = combatMusicAMG.audioMixer;
 
@@ -83,11 +80,12 @@ public class BackgroundMusicManager : MonoBehaviour
         }
 
 
-        //Convert to audio range
-
-        while (currentTime < duration)
+        //Make sure that we are going the correct direction, if needs to stop than the other coroutine will take over
+        while (currentTime < duration && currentlyFadingToCombat == fadingToCombat)
         {
             currentTime += Time.deltaTime;
+
+            //change from linear to passed in curves for cleaner transition
             float newFromVol = Mathf.Lerp(currentFromVol, goalFromVol, volumeFromCurve.Evaluate(currentTime / duration));
             float newToVol = Mathf.Lerp(currentToVol, goalToVol, volumeToCurve.Evaluate(currentTime / duration));
 
@@ -110,9 +108,7 @@ public class BackgroundMusicManager : MonoBehaviour
 
         combatMusicAMG.audioMixer.GetFloat("CombatVolume", out onCombatMusicVolume);
 
-
         combatMusicAMG.audioMixer.SetFloat("CombatVolume", offCombatMusicVolume);
-
 
     }
 

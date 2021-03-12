@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 6741639182579775124}
   - component: {fileID: 711614053265216730}
   - component: {fileID: 269150695}
+  - component: {fileID: 974348987}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -499,8 +500,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: -10
-  runSpeed: 2.5
-  groundDamping: 25
+  runSpeed: 2
+  groundDamping: 15
   inAirDamping: 5
   jumpHeight: 0.8
   movingAndAttacking: 0
@@ -626,3 +627,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tint: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &974348987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7652625722810937861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66dd66bca1fb2941a6d718f5922cb20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatMusicMinRadius: 3.5
+  combatMusicMaxRadius: 5
