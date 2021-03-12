@@ -9,7 +9,7 @@ public class PlayRandomSound : MonoBehaviour
 
 
     public AudioSource audioSource;
-    public AudioClip[] audioSources;
+    public AudioClip[] audioClips;
 
     public bool continuous = false;
 
@@ -32,8 +32,9 @@ public class PlayRandomSound : MonoBehaviour
     //Call play sound to play a random sound from the range of the attached stuff
     public void PlaySound(float initialOffset = 0)
     {
-        audioSource.clip = audioSources[Random.Range(0, audioSources.Length)];
+        audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
         audioSource.time = initialOffset;
         audioSource.Play();
+        
     }
 }

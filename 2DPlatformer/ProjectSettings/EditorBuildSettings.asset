@@ -8,4 +8,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Levels/Level2_Forest.unity
+    guid: 0d4d86519f08e2e45929e87ff0ee9e3c
+  - enabled: 1
+    path: Assets/Levels/Level1_Meadow.unity
+    guid: 468ea97b0a0edaa4489acc0bd1ba8de9
+  - enabled: 1
+    path: Assets/Levels/DeathScreen.unity
+    guid: 0d6502a687015aa4b9096c1810820ff4
+  - enabled: 1
+    path: Assets/Levels/WinScreen.unity
+    guid: 71ae9e105c4767d4d9e787f239075cc8
+  - enabled: 1
+    path: Assets/Levels/MainMenu.unity
+    guid: 9675985621bf88544948a8bd60957284
+  - enabled: 1
+    path: Assets/Levels/Options.unity
+    guid: 4fb71d18752d34343a4f6a575112ca67
+  - enabled: 1
+    path: Assets/Levels/Test_Level.unity
+    guid: a92fdc8b2dcb928438e35b04bac319ea
   m_configObjects: {}
