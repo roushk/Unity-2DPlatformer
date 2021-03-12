@@ -208,18 +208,18 @@ public class PlayerMovement : MonoBehaviour
 //													Attacks														//
 /****************************************************************************************************************/
 
-		if(Input.GetMouseButtonDown(0) && (controller.isGrounded || !movingAndAttacking))
+		if(Input.GetMouseButtonDown(0) && (controller.isGrounded && !movingAndAttacking))
 		{
 			//animator.SetTrigger("SlashAttack");
 			animator.Play("SlashAttack");
 		}
-		else if(Input.GetKeyDown(KeyCode.Q) && (controller.isGrounded || !movingAndAttacking))
+		else if(Input.GetKeyDown(KeyCode.Q) && (controller.isGrounded && !movingAndAttacking))
 		{
 			//animator.SetTrigger("StabAttack");
 			animator.Play("StabAttack");
 
 		}
-		else if(Input.GetKeyDown(KeyCode.E) && (controller.isGrounded || !movingAndAttacking))
+		else if(Input.GetKeyDown(KeyCode.E) && (controller.isGrounded && !movingAndAttacking))
 		{
 			//animator.SetTrigger("OverheadAttack");
 			animator.Play("OverheadAttack");

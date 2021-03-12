@@ -8,15 +8,17 @@ public class WolfAI : MonoBehaviour
     public float deAggroRadius = 2.0f;   //if you leave this the wolves stop being angry and go back to their original position
     public float deAggroTime = 2.0f;    //time to wait to move back to original pos after deaggroing.
 
+    public float otherWolfAggroRadius = 1f;
+    public float attackRadius = 0.3f;
+
+    float timeAggroByFriend = 0.0f;
+    
     //incremented time
     float deAggroCurrentTime = 1.0f;
 
     private Vector3 origPos;
     private float aggroMovementSpeed;
     private float deAggroMovementSpeed;
-
-    public float otherWolfAggroRadius = 1f;
-    public float attackRadius = 0.3f;
 
     public float attackCooldown = 0.5f;
 
@@ -27,7 +29,7 @@ public class WolfAI : MonoBehaviour
 
     bool isAggro = false;
     bool justAggro = false;
-
+    public bool aggroByFriend = true;
     bool firstFrameDead = true;
 
     private Transform target;
@@ -70,11 +72,19 @@ public class WolfAI : MonoBehaviour
 
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, otherWolfAggroRadius);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
 
     void Update()
     {
         deAggroCurrentTime += Time.deltaTime;
+
+        if(aggroByFriend)
+        {
+            timeAggroByFriend += Time.deltaTime;
+        }
 
         if (health.isDead)
         {
@@ -106,7 +116,17 @@ public class WolfAI : MonoBehaviour
         //deaggro radius much larger than regular radius
         if (distToPlayerX > deAggroRadius)
         {
-            isAggro = false;
+            if(!aggroByFriend)
+            {
+                isAggro = false;
+            }
+            else if(aggroByFriend && timeAggroByFriend > 1.0f)
+            {
+                //reset the friend aggro stuff
+                aggroByFriend = false;
+                timeAggroByFriend = 0;
+                isAggro = false;
+            }
         }
 
         if(isAggro)
@@ -145,16 +165,6 @@ public class WolfAI : MonoBehaviour
             growlSoundList.PlaySound();
         }
 
-        //first time aggro'd then anger other wolves in the area
-        //TODO make wolf howl noise from a set of multiple wolves aggroed
-        if(justAggro)
-        {
-            //if the func found any other wolves that aren't aggroed then howl
-            if(TriggerWolvesInRadius())
-            {
-                fellowAggroSoundList.PlaySound(0.5f);
-            }
-        }
 
         //TODO remove this hacky bs or add walking anim
         //ok this actually looks and works very well tbh
@@ -170,20 +180,31 @@ public class WolfAI : MonoBehaviour
         }
     }
 
+    void LateUpdate()
+    {
+        //first time aggro'd then anger other wolves in the area
+        if (justAggro && TriggerWolvesInRadius() && !aggroByFriend)
+        {
+            fellowAggroSoundList.PlaySound(0.5f);
+        }
+    }
+
     public bool TriggerWolvesInRadius()
     {
         bool triggeredOtherWolves = false;
         Collider2D[] overlappedObjects = Physics2D.OverlapCircleAll(transform.position, otherWolfAggroRadius, wolfLayerMask);
 
-        foreach (var collider in overlappedObjects)
+        foreach (var overlappedObj in overlappedObjects)
         {
             //"quick" recursive check if an enemy and if so deeper check if has wolf AI aka is a wolf and only if that wolf isn't aggroed
-            if (collider.gameObject.GetComponent<WolfAI>() != null && collider.gameObject.GetComponent<WolfAI>().isAggro == false)
+            if (overlappedObj.gameObject.GetComponent<WolfAI>() != null && overlappedObj.gameObject.GetComponent<WolfAI>().isAggro == false)
             {
                 triggeredOtherWolves = true;
+                WolfAI wolfAI = overlappedObj.gameObject.GetComponent<WolfAI>();
 
-                collider.gameObject.GetComponent<WolfAI>().isAggro = true;
-                collider.gameObject.GetComponent<WolfAI>().TriggerWolvesInRadius();
+                wolfAI.isAggro = true;
+                wolfAI.aggroByFriend = true;
+                wolfAI.TriggerWolvesInRadius();
 
             }
         }
