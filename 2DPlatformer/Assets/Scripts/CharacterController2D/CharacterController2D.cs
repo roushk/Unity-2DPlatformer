@@ -1,5 +1,6 @@
 ﻿#define DEBUG_CC2D_RAYS
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using System;
 using System.Collections.Generic;
 
@@ -154,6 +155,7 @@ public class CharacterController2D : MonoBehaviour
 
 	const float kSkinWidthFloatFudgeFactor = 0.001f;
 
+	Dictionary<PhysicsMaterial2D, int> numOfEachPhysicsMatUnderPlayer = new Dictionary<PhysicsMaterial2D, int>();
 	#endregion
 
 
@@ -287,11 +289,24 @@ public class CharacterController2D : MonoBehaviour
 		if( _isGoingUpSlope || _isGoingDownSlope)
 			velocity.y = 0;
 
-			// send off the collision events if we have a listener
-			if ( onControllerCollidedEvent != null )
+		numOfEachPhysicsMatUnderPlayer.Clear();
+
+		// send off the collision events if we have a listener
+		if ( onControllerCollidedEvent != null )
 		{
 			for( var i = 0; i < _raycastHitsThisFrame.Count; i++ )
+            {
 				onControllerCollidedEvent( _raycastHitsThisFrame[i] );
+				TilemapCollider2D col = _raycastHitsThisFrame[i].collider.gameObject.GetComponent<TilemapCollider2D>();
+
+				//if we have a material in the obj underneath us
+                if (col != null && col.sharedMaterial != null)
+                {
+					int currentCount = 0;
+					numOfEachPhysicsMatUnderPlayer.TryGetValue(col.sharedMaterial, out currentCount);
+					numOfEachPhysicsMatUnderPlayer.Add(col.sharedMaterial, currentCount);
+				}
+			}
 		}
 
 		ignoreOneWayPlatformsThisFrame = false;
