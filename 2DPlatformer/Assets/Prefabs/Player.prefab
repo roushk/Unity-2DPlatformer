@@ -424,7 +424,7 @@ MonoBehaviour:
   _skinWidth: 0.05
   platformMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 65
   triggerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -501,11 +501,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: -10
   runSpeed: 2
-  groundDamping: 15
+  groundDamping: 1
   inAirDamping: 5
   jumpHeight: 0.8
   movingAndAttacking: 0
   isGuarding: 0
+  materialUnderfoot: {fileID: 0}
 --- !u!61 &6261991625264581262
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -548,7 +549,7 @@ Rigidbody2D:
   m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9051e08dd7ea85342b778c89766b3e71, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1

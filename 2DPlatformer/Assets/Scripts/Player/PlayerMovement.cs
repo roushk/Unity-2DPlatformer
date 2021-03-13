@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.Tilemaps;
 using Prime31;
 
 
@@ -35,6 +37,13 @@ public class PlayerMovement : MonoBehaviour
 	private float notGroundedTimer = 0;
 	private float minFallingToAnimate = 0.1f;   //100 ms
 
+	private LayerMask tileMask;
+	public PhysicsMaterial2D materialUnderfoot;
+
+	Dictionary<PhysicsMaterial2D, int> numOfEachPhysicsMatUnderPlayer = new Dictionary<PhysicsMaterial2D, int>();
+
+	float materialUnderfootTimer = 0.0f;
+	float materialUnderfootTimerMax = 0.25f;
 	enum PlayerFacing
 	{
 		Left,
@@ -44,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
 	void Awake()
 	{
+		materialUnderfoot = GetComponent<Rigidbody2D>().sharedMaterial;
 		animator = GetComponent<Animator>();
 		controller = GetComponent<CharacterController2D>();
 		health = GetComponent<HealthAndDamage>();
@@ -52,6 +62,8 @@ public class PlayerMovement : MonoBehaviour
 		controller.onControllerCollidedEvent += onControllerCollider;
 		controller.onTriggerEnterEvent += onTriggerEnterEvent;
 		controller.onTriggerExitEvent += onTriggerExitEvent;
+
+		tileMask = LayerMask.GetMask("Platforms");
 	}
 
 
@@ -83,7 +95,22 @@ public class PlayerMovement : MonoBehaviour
 
 	void Update()
 	{
+		materialUnderfootTimer += Time.deltaTime;
 
+		if (materialUnderfootTimer > materialUnderfootTimerMax)
+        {
+			materialUnderfootTimer = 0;
+			//If there is something beneath then set stuff
+			if (controller.isGrounded)
+			{
+				RaycastHit2D col = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), new Vector2(0, -1), 1.0f, tileMask);
+				if (col.collider != null && col.collider.gameObject.GetComponent<TilemapCollider2D>() != null)
+				{
+					materialUnderfoot = col.collider.gameObject.GetComponent<TilemapCollider2D>().sharedMaterial;
+					//Debug.Log("Set Material Below");
+				}
+			}
+		}
 /****************************************************************************************************************/
 //													Movement													//
 /****************************************************************************************************************/
@@ -118,9 +145,12 @@ public class PlayerMovement : MonoBehaviour
 			animator.SetTrigger("PlayerJumped");
 		}
 
+
+
+
 		// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
-		var smoothedMovementFactor = controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
-		velocity.x = Mathf.Lerp( velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor );
+		var smoothedMovementFactor = controller.isGrounded ? groundDamping * materialUnderfoot.friction : inAirDamping; // how fast do we change direction?
+		velocity.x = Mathf.Lerp( velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
 
 		// apply gravity before moving
 		velocity.y += gravity * Time.deltaTime;
