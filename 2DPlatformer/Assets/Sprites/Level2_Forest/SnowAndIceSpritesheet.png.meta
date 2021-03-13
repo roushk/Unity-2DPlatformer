@@ -170,7 +170,8 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -16, y: -32}
-        - {x: -16, y: -1}
+        - {x: -16, y: -2}
+        - {x: 6, y: -2}
         - {x: 16, y: -4}
         - {x: 16, y: -32}
       tessellationDetail: 0
@@ -302,10 +303,7 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -16, y: -32}
-        - {x: -16, y: 9}
-        - {x: -5, y: 1}
-        - {x: 5, y: -9}
-        - {x: 8, y: -14}
+        - {x: -16, y: 10}
         - {x: 16, y: -22}
         - {x: 16, y: -32}
       tessellationDetail: 0
@@ -461,7 +459,7 @@ TextureImporter:
       - - {x: -16, y: -32}
         - {x: -16, y: -2}
         - {x: 1, y: 3}
-        - {x: 16, y: 15}
+        - {x: 16, y: 14}
         - {x: 16, y: -32}
       tessellationDetail: 0
       bones: []
@@ -485,8 +483,8 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -16, y: -32}
-        - {x: -16, y: -17}
-        - {x: 16, y: 16}
+        - {x: -16, y: -18}
+        - {x: 16, y: 14}
         - {x: 16, y: -32}
       tessellationDetail: 0
       bones: []
@@ -511,7 +509,7 @@ TextureImporter:
       physicsShape:
       - - {x: -16, y: -32}
         - {x: -16, y: -18}
-        - {x: 2, y: -2}
+        - {x: -1, y: -4}
         - {x: 16, y: -2}
         - {x: 16, y: -32}
       tessellationDetail: 0
@@ -537,7 +535,7 @@ TextureImporter:
       physicsShape:
       - - {x: -16, y: -32}
         - {x: -16, y: -2}
-        - {x: 0, y: -2}
+        - {x: 2, y: -5}
         - {x: 16, y: -18}
         - {x: 16, y: -32}
       tessellationDetail: 0
@@ -562,7 +560,7 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -16, y: -32}
-        - {x: -16, y: 13}
+        - {x: -16, y: 14}
         - {x: 16, y: -18}
         - {x: 16, y: -32}
       tessellationDetail: 0
@@ -587,7 +585,7 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -16, y: -32}
-        - {x: -16, y: 13}
+        - {x: -16, y: 14}
         - {x: 0, y: 2}
         - {x: 16, y: -2}
         - {x: 16, y: -32}
