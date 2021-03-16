@@ -431,21 +431,12 @@ MonoBehaviour:
   oneWayPlatformMask:
     serializedVersion: 2
     m_Bits: 128
-  slopeLimit: 40
+  slopeLimit: 60
   jumpingThreshold: 0.1
   fallingThreshhold: 0.1
   slopeSpeedMultiplier:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: -90
-      value: 1.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
     - serializedVersion: 3
       time: 0
       value: 1
@@ -456,31 +447,31 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 49.16098
-      value: 0.9537097
-      inSlope: -0.0020322078
-      outSlope: -0.0020322078
+      time: 0.8348079
+      value: 0.99575895
+      inSlope: -0.017394712
+      outSlope: -0.017394712
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.32350934
       outWeight: 1
     - serializedVersion: 3
-      time: 69.87648
-      value: 0.64655393
-      inSlope: -0.016219188
-      outSlope: -0.016219188
+      time: 0.9672558
+      value: 0.91667444
+      inSlope: -0.9855893
+      outSlope: -0.9855893
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0.08344818
+      outWeight: 1
     - serializedVersion: 3
-      time: 90
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      time: 0.9916666
+      value: 0.8962254
+      inSlope: -0.19297314
+      outSlope: -0.19297314
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.18487391
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -501,10 +492,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: -10
   runSpeed: 2
-  groundDamping: 1
+  groundDamping: 20
   inAirDamping: 5
   jumpHeight: 0.8
   movingAndAttacking: 0
+  playerMovementSpeedInAnimation: 1
   isGuarding: 0
   materialUnderfoot: {fileID: 0}
 --- !u!61 &6261991625264581262
@@ -531,7 +523,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.45}
+  m_Size: {x: 0.1, y: 0.45}
   m_EdgeRadius: 0
 --- !u!50 &8614147766534081392
 Rigidbody2D:
