@@ -283,7 +283,7 @@ namespace Prime31 {
 				collisionState.becameGroundedThisFrame = true;
 
 			// if we are going up a slope we artificially set a y velocity so we need to zero it out here
-			if( _isGoingUpSlope || _isGoingDownSlope)
+			if( _isGoingUpSlope)
 				velocity.y = 0;
 
 			// send off the collision events if we have a listener

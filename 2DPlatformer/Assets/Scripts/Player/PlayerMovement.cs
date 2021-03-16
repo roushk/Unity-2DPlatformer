@@ -16,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
 
 	public bool movingAndAttacking = false;
 
+	//used from the animation to slowdown and speed up the players movement while attacking
+	//scale 0 to 1
+	public float playerMovementSpeedInAnimation = 1.0f;
+
 	[HideInInspector]
 	public bool isGuarding = false;
 
@@ -117,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
 
 		if(controller.isGrounded)
 		{
-			velocity.y = 0;
+			//velocity.y = 0;
 			notGroundedTimer = 0;
 		}
 		else
@@ -145,9 +149,6 @@ public class PlayerMovement : MonoBehaviour
 			animator.SetTrigger("PlayerJumped");
 		}
 
-
-
-
 		// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
 		var smoothedMovementFactor = controller.isGrounded ? groundDamping * materialUnderfoot.friction : inAirDamping; // how fast do we change direction?
 		velocity.x = Mathf.Lerp( velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
@@ -162,7 +163,6 @@ public class PlayerMovement : MonoBehaviour
 			velocity.y *= 3f;
 			controller.ignoreOneWayPlatformsThisFrame = true;
 		}
-
 
 /****************************************************************************************************************/
 //											 Player Blocking													//
@@ -185,10 +185,15 @@ public class PlayerMovement : MonoBehaviour
 		if(movingAndAttacking == false)
         {
 
-			if ((isGuarding && controller.isGrounded) || animatorInfo.IsName("SlashAttack") || animatorInfo.IsName("StabAttack") || animatorInfo.IsName("OverheadAttack"))
+			if ((isGuarding && controller.isGrounded))
 			{
 				velocity.x = 0;
 				velocity.y = 0;			
+			}
+			if(animatorInfo.IsName("SlashAttack") || animatorInfo.IsName("StabAttack") || animatorInfo.IsName("OverheadAttack"))
+            {
+				velocity.x *= playerMovementSpeedInAnimation;
+				velocity.y *= playerMovementSpeedInAnimation;
 			}
         }
         else
@@ -201,26 +206,29 @@ public class PlayerMovement : MonoBehaviour
 
 		}
 
-/****************************************************************************************************************/
-//												 Player Facing													//
-/****************************************************************************************************************/
+		/****************************************************************************************************************/
+		//												 Player Facing													//
+		/****************************************************************************************************************/
 
-		PlayerFacing oldFacing = playerFacing;
+		if (!animatorInfo.IsName("SlashAttack") && !animatorInfo.IsName("StabAttack") && !animatorInfo.IsName("OverheadAttack"))
+        {
+			PlayerFacing oldFacing = playerFacing;
 
-		if (velocity.x > 0f && normalizedHorizontalSpeed > 0)
-		{
-			playerFacing = PlayerFacing.Right;
-		}
-		else if (velocity.x < 0f && normalizedHorizontalSpeed < 0)
-		{
-			playerFacing = PlayerFacing.Left;
-		}
+			if (normalizedHorizontalSpeed > 0)
+			{
+				playerFacing = PlayerFacing.Right;
+			}
+			else if (normalizedHorizontalSpeed < 0)
+			{
+				playerFacing = PlayerFacing.Left;
+			}
 
-		//if we are now facing a new direction
-		if (oldFacing != playerFacing)
-		{
-			transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-		}
+			//if we are now facing a new direction
+			if (oldFacing != playerFacing)
+			{
+				transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+			}
+        }
 
 /****************************************************************************************************************/
 //										 Player Final Movement Updates											//
