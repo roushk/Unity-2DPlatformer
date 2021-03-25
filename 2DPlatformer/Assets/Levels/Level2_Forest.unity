@@ -10633,10 +10633,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1449860669}
     m_Modifications:
-    - target: {fileID: 2524999093328835896, guid: 903feafff91807b4eb3d8ebf63664862, type: 3}
-      propertyPath: scrollSpeed.x
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4617382027369754257, guid: 903feafff91807b4eb3d8ebf63664862, type: 3}
       propertyPath: m_Name
       value: Level2_ForestTrailBackground
